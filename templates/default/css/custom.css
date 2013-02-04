@@ -1,0 +1,36 @@
+body {
+	background: #ebebeb url('../img/bg.png');
+}
+
+.content {
+	background: #ffffff;
+	padding: 20px;
+	border-radius: 5px;
+	border: 1px #cecece solid;
+	-webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, .1);
+	-moz-box-shadow: 0 1px 10px rgba(0, 0, 0, .1);
+	box-shadow: 0 1px 10px rgba(0, 0, 0, .1);
+	margin-bottom: 20px;
+}
+
+.table {
+	background: #ffffff;
+	margin-bottom: 0;
+}
+
+.table td img {
+	max-height: 20px;
+	max-width: 20px;
+}
+
+.table th {
+	text-align: center;
+}
+
+.table td.center {
+	text-align: center;
+}
+
+.progress {
+	margin-bottom: 0;
+}
