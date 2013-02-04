@@ -10,7 +10,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `servers` (
   `id` int(1) NOT NULL AUTO_INCREMENT,
   `name` varchar(65) NOT NULL,
-  `ip_address` varchar(65) NOT NULL,
+  `url` varchar(65) NOT NULL,
   `location` varchar(65) NOT NULL,
   `host` varchar(65) NOT NULL,
   `type` varchar(65) NOT NULL,
