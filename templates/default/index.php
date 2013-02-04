@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>ServerUptime</title>
+		<title>Server Status</title>
 		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 		<?php echo $sJavascript; ?>
 		<script src="<?php echo $templates; ?>js/bootstrap.min.js"></script>
@@ -20,7 +20,7 @@
 		<div class="navbar navbar-fixed-top">
 			<div class="navbar-inner">
 				<div class="container">
-					<a class="brand" href="#">ServerUptime</a>
+					<a class="brand" href="/">Server Status</a>
 				</div>
 			</div>
 		</div>
