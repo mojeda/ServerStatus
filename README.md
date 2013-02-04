@@ -1,4 +1,4 @@
-ServerStatus
+# ServerStatus
 ============
 
 ServerStatus is based off [BlueVM's](http://uptime.bluevm.com/) Uptime Checker script, [original download and information](http://www.lowendtalk.com/discussion/comment/169690#Comment_169690).
@@ -6,6 +6,10 @@ ServerStatus is based off [BlueVM's](http://uptime.bluevm.com/) Uptime Checker s
 It uses Bootstrap for theming and progress bars.
 
 You can currently see Load, RAM (free), HDD (free) statistics, and if it is online or not.
+
+# Screenshot
+============
+![Screenshot](http://i.imgur.com/wMNzhw0.png)
 
 # Installation
 ============
