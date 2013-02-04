@@ -14,7 +14,7 @@ $sId = mysql_real_escape_string($_GET['url']);
 if(is_numeric($sId)){
 	$data = mysql_query("SELECT * FROM servers WHERE id='$sId'");
 	$result = mysql_fetch_array($data);
-	$url = "http://".$result['ip_address']."/uptime.php";
+	$url = "http://".$result['url']."/uptime.php";
 	$output = get_data($url);
 	if(($output == NULL) || ($output === false)){
 		$array = array();
