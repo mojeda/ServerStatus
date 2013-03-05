@@ -10,6 +10,7 @@ You can currently see Load, RAM (free), HDD (free) statistics, and if it is onli
 # Screenshot
 ============
 ![Screenshot](http://i.imgur.com/wMNzhw0.png)
+![Mobile Screenshot](http://i.imgur.com/na8iVZH.png)
 
 # Installation
 ============
