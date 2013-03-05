@@ -17,15 +17,15 @@ while($result = mysql_fetch_array($query)){
 		<tr>
 			<td id="online'.$result["id"].'">
 				<div class="progress">
-					<div class="bar bar-danger" style="width: 100%;"><small>Offline</small></div>
+					<div class="bar bar-danger" style="width: 100%;"><small>Down</small></div>
 				</div>
 			</td>
-			<td class="center">'.$result["name"].'</td>
-			<td class="center">'.$result["type"].'</td>
-			<td class="center">'.$result["host"].'</td>
-			<td class="center">'.$result["location"].'</td>
-			<td id="uptime'.$result["id"].'" class="center">n/a</td>
-			<td id="load'.$result["id"].'" class="center">n/a</td>
+			<td>'.$result["name"].'</td>
+			<td>'.$result["type"].'</td>
+			<td>'.$result["host"].'</td>
+			<td>'.$result["location"].'</td>
+			<td id="uptime'.$result["id"].'">n/a</td>
+			<td id="load'.$result["id"].'">n/a</td>
 			<td id="memory'.$result["id"].'">
 				<div class="progress progress-striped active">
 					<div class="bar bar-danger" style="width: 100%;"><small>n/a</small></div>

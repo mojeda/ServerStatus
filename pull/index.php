@@ -20,17 +20,17 @@ if(is_numeric($sId)){
 		$array = array();
 		$array['uptime'] = '
 		<div class="progress">
-			<div class="bar bar-danger" style="width: 100%;"><small>Offline</small></div>
+			<div class="bar bar-danger" style="width: 100%;"><small>Down</small></div>
 		</div>
 		';
 		$array['load'] = '
 		<div class="progress">
-			<div class="bar bar-danger" style="width: 100%;"><small>Offline</small></div>
+			<div class="bar bar-danger" style="width: 100%;"><small>Down</small></div>
 		</div>
 		';
 		$array['online'] = '
 		<div class="progress">
-			<div class="bar bar-danger" style="width: 100%;"><small>Offline</small></div>
+			<div class="bar bar-danger" style="width: 100%;"><small>Down</small></div>
 		</div>
 		';
 		echo json_encode($array);

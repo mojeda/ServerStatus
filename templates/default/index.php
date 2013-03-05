@@ -1,49 +1,52 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Server Status</title>
-		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-		<?php echo $sJavascript; ?>
-		<script src="<?php echo $templates; ?>js/bootstrap.min.js"></script>
-		<script type="text/javascript">
-			$(function () {
-				$("[rel='tooltip']").tooltip();
-			});
-		</script>
-		<link href="<?php echo $templates; ?>css/bootstrap.css" rel="stylesheet">
-		<link href="<?php echo $templates; ?>css/custom.css" rel="stylesheet">
+		<title>ServerStatus</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+		<link href="<?php echo $template; ?>css/custom.css" rel="stylesheet">
 		<style>
 			body { padding-top: 60px; }
+			@media (max-width: 979px) {
+  				body { padding-top: 0px; }
+			}
 		</style>
 	</head>
-	<body>
-		<div class="navbar navbar-fixed-top">
-			<div class="navbar-inner">
-				<div class="container">
-					<a class="brand" href="/">Server Status</a>
-				</div>
-			</div>
+<body>
+	<div class="navbar navbar-fixed-top">
+	  <div class="navbar-inner">
+	  	<div class="container">
+		    <a class="brand" href="#">ServerUptime</a>
 		</div>
+	  </div>
+	</div>
 
-		<div class="container content">
-			<table class="table table-striped table-condensed">
-				<tr>
-					<th style="text-align: center;">Status</th>
-					<th>Name</th>
-					<th>Type</th>
-					<th>Host</th>
-					<th>Location</th>
-					<th>Uptime</th>
-					<th>Load</th>
-					<th>RAM <small>(Free)</small></th>
-					<th>HDD <small>(Free)</small></th>
-				</tr>
+	<div class="container content">
+		<table class="table table-striped table-condensed">
+			<thead>
+			<tr>
+				<th id="status" style="text-align: center;">Status</th>
+				<th id="name">Name</th>
+				<th id="type">Type</th>
+				<th id="host">Host</th>
+				<th id="location">Location</th>
+				<th id="uptime">Uptime</th>
+				<th id="load">Load</th>
+				<th id="ram">RAM</th>
+				<th id="hdd">HDD</th>
+			</tr>
+			</thead>
+			<tbody>
 			<?php echo $sTable; ?>
-			</table>
-		</div>
-
-		<div class="container">
-			<p><center>Base Script Provided by <a href="http://bluevm.com" target="_blank">BlueVM</a> - Customized by <a href="http://www.mojeda.com">Michael Ojeda</a></center></p>
-		</div>
-	</body>
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="container">
+		<p style="text-align: center; font-size: 10px;"><a href="https://github.com/mojeda/ServerStatus">ServerStatus</a> - Base Script Provided by <a href="http://bluevm.com" target="_blank">BlueVM</a> - Customized by <a href="http://www.mojeda.com">Michael Ojeda</a></p>
+	</div>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+	<?php echo $sJavascript; ?>
+</body>
 </html>
