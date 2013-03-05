@@ -1,9 +1,19 @@
 <?php
+function sec2human($time) {
+  $seconds = $time%60;
+	$mins = floor($time/60)%60;
+	$hours = floor($time/60/60)%24;
+	$days = floor($time/60/60/24);
+	return $days > 0 ? $days . ' day'.($days > 1 ? 's' : '') : $hours.':'.$mins.':'.$seconds;
+}
+
 $array = array();
-$data = shell_exec('uptime');
-$uptime = explode(' up ', $data);
-$uptime = explode(',', $uptime[1]);
-$array['uptime'] = $uptime[0];
+$fh = fopen('/proc/uptime', 'r');
+$uptime = fgets($fh);
+fclose($fh);
+$uptime = explode('.', $uptime, 2);
+$array['uptime'] = sec2human($uptime[0]);
+
 
 $fh = fopen('/proc/meminfo', 'r');
   $mem = 0;
