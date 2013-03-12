@@ -15,23 +15,23 @@ while($result = mysql_fetch_array($query)){
 	});';
 	$sTable .= '
 		<tr>
-			<td id="online'.$result["id"].'">
+			<td class="center" id="online'.$result["id"].'">
 				<div class="progress">
 					<div class="bar bar-danger" style="width: 100%;"><small>Down</small></div>
 				</div>
 			</td>
-			<td>'.$result["name"].'</td>
-			<td>'.$result["type"].'</td>
-			<td>'.$result["host"].'</td>
-			<td>'.$result["location"].'</td>
-			<td id="uptime'.$result["id"].'">n/a</td>
-			<td id="load'.$result["id"].'">n/a</td>
-			<td id="memory'.$result["id"].'">
+			<td class="center">'.$result["name"].'</td>
+			<td class="center">'.$result["type"].'</td>
+			<td class="center">'.$result["host"].'</td>
+			<td class="center">'.$result["location"].'</td>
+			<td class="center" id="uptime'.$result["id"].'">n/a</td>
+			<td class="center" id="load'.$result["id"].'">n/a</td>
+			<td class="center" id="memory'.$result["id"].'">
 				<div class="progress progress-striped active">
 					<div class="bar bar-danger" style="width: 100%;"><small>n/a</small></div>
 				</div>
 			</td>
-			<td id="hdd'.$result["id"].'">
+			<td class="center" id="hdd'.$result["id"].'">
 				<div class="progress progress-striped active">
 					<div class="bar bar-danger" style="width: 100%;"><small>n/a</small></div>
 				</div>
