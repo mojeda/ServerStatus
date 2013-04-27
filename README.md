@@ -9,13 +9,8 @@ You can currently see Load, RAM (free), HDD (free) statistics, and if it is onli
 
 # Screenshot
 ============
-<<<<<<< HEAD
-![Screenshot](http://i.imgur.com/wMNzhw0.png)
-![Mobile Screenshot](http://i.imgur.com/na8iVZH.png)
-=======
 ![Screenshot](http://www.mojeda.com/wp/wp-content/2013/04/serverupbigthemes.png)
 ![Mobile Screenshot](http://www.mojeda.com/wp/wp-content/2013/04/serverupthemes.png)
->>>>>>> Dark Theme
 
 # Installation
 ============
