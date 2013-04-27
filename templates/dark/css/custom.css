@@ -1,9 +1,11 @@
-body { background: #ebebeb url('../img/bg.png'); }
-.content { background: #ffffff; padding: 20px; border-radius: 5px; border: 1px #cecece solid; -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, .1); -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, .1); box-shadow: 0 1px 10px rgba(0, 0, 0, .1); margin-bottom: 20px; }
-.table { background: #ffffff; margin-bottom: 0; border-collapse: collapse; border-radius: 3px; }
+body { background: #222222 url('../img/bg.png'); color: #fff; }
+.navbar-inverse .brand { color: #fff; }
+.content { background: #222; padding: 20px; border-radius: 5px; border: 1px #000 solid; -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, .1); -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, .1); box-shadow: 0 1px 10px rgba(0, 0, 0, .1); margin-bottom: 20px; }
+.table { background: #000; margin-bottom: 0; border-collapse: collapse; border-radius: 3px; }
 .table th { text-align: center; }
-.table td { text-align: center; }
-.progress { margin-bottom: 0; }
+.table-striped tbody>tr:nth-child(odd)>td, .table-striped tbody>tr:nth-child(odd)>th { background-color: #2f2f2f; }
+.table td { text-align: center; border-color: #2f2f2f; }
+.progress { margin-bottom: 0; background: #222; }
 #ram, #hdd { min-width: 35px; max-width: 100px; }
 @media only screen and (max-width: 768px) {
 	#host, tr td:nth-child(4)			{ display:none; visibility:hidden; }

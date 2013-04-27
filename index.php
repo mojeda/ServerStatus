@@ -44,5 +44,7 @@ while($result = mysql_fetch_array($query)){
 	uptime();
 	setInterval(uptime, '.$sSetting['refresh'].');
 	</script>';
-include('./templates/default/index.php');
+
+include($index);
+
 ?>
