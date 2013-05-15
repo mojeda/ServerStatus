@@ -1,5 +1,6 @@
 <?php
 include('./includes/config.php');
+global $sJavascript, $sTable;
 
 $query = mysql_query("SELECT * FROM servers ORDER BY id") or die(mysql_error());
 	$sJavascript .= '<script type="text/javascript">
