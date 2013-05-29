@@ -43,7 +43,7 @@
 	</div>
 	
 	<div class="container">
-		<p style="text-align: center; font-size: 10px;"><a href="https://github.com/mojeda/ServerStatus">ServerStatus</a> - Base Script Provided by <a href="http://bluevm.com" target="_blank">BlueVM</a> - Customized by <a href="http://www.mojeda.com">Michael Ojeda</a></p>
+		<p style="text-align: center; font-size: 10px;"><a href="https://github.com/mojeda/ServerStatus">ServerStatus</a> - Customized by <a href="http://www.mojeda.com">Michael Ojeda</a></p>
 	</div>
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
