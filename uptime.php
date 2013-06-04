@@ -65,7 +65,7 @@ $array['online'] = '<div class="progress">
 <div class="bar bar-success" style="width: 100%;"><small>Up</small></div>
 </div>';
 
-if ($_GET['ss'] == true) { echo json_encode($array); } else { echo '
+if ($_GET['lg'] == true) { echo '
 <div class="row" style="text-align: center;">
 <div class="span3">
 Uptime <span class="badge">'.$array['uptime'].'</span>
@@ -80,5 +80,5 @@ Memory <span class="badge">'.$memory.'</span>
 Disk Space <span class="badge">'.$hdd.'</span>
 </div>
 </div>
-'; };
+'; } else { echo json_encode($array); };
 ?>
