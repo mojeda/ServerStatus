@@ -65,4 +65,20 @@ $array['online'] = '<div class="progress">
 <div class="bar bar-success" style="width: 100%;"><small>Up</small></div>
 </div>';
 
-echo json_encode($array);
+if ($_GET['ss'] == true) { echo json_encode($array); } else { echo '
+<div class="row" style="text-align: center;">
+<div class="span3">
+Uptime <span class="badge">'.$array['uptime'].'</span>
+</div>
+<div class="span3">
+Load <span class="badge">'.$array['load'].'</span>
+</div>
+<div class="span3">
+Memory <span class="badge">'.$memory.'</span>
+</div>
+<div class="span3">
+Disk Space <span class="badge">'.$hdd.'</span>
+</div>
+</div>
+'; };
+?>
