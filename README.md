@@ -1,4 +1,4 @@
-# ServerStatus
+# ServerStatus DEV
 ============
 
 ServerStatus is based off [BlueVM's](http://uptime.bluevm.com/) Uptime Checker script, [original download and information](http://www.lowendtalk.com/discussion/comment/169690#Comment_169690).
@@ -37,3 +37,15 @@ You can currently see Load, RAM (free), HDD (free) statistics, and if it is onli
 * PHP5 + PHP5_CURL
 * Web Server (lighttpd, apache2, nginx, etc.)
 * mySQL server unless you choose to use a remote mySQL server.
+
+# LookingGlass Support
+============
+
+ServerStatus has been implemented into LookingGlass to show server status on your LookingGlass pages.
+
+**Instructions**:
+* Install [LookingGlass](https://github.com/Telephone/LookingGlass) if you haven't already.
+* Upload ServerStatus uptime.php to same directory as LookingGlass' index.php.
+* Upload modified/additional ServerStatus+LookingGlass Files in the [LookingGlass Folder](https://github.com/mojeda/ServerStatus/tree/dev/LookingGlass).
+
+![LookingStatus](http://i.imgur.com/me9VN7m.png)
