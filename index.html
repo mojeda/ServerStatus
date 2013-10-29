@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Serverstatus by mojeda</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Serverstatus</h1>
+        <p>Server Status website script, displays uptime (days), free RAM, free HDD.</p>
+
+        <p class="view"><a href="https://github.com/mojeda/ServerStatus">View the Project on GitHub <small>mojeda/ServerStatus</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/mojeda/ServerStatus/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/mojeda/ServerStatus/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/mojeda/ServerStatus">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="serverstatus" class="anchor" href="#serverstatus"><span class="octicon octicon-link"></span></a>ServerStatus</h1>
+
+<h1></h1>
+
+<p>ServerStatus is based off <a href="http://uptime.bluevm.com/">BlueVM's</a> Uptime Checker script, <a href="http://www.lowendtalk.com/discussion/comment/169690#Comment_169690">original download and information</a>.</p>
+
+<p>It uses Bootstrap for theming and progress bars.</p>
+
+<p>You can currently see Load, RAM (free), HDD (free) statistics, and if it is online or not.</p>
+
+<h1>
+<a name="screenshot" class="anchor" href="#screenshot"><span class="octicon octicon-link"></span></a>Screenshot</h1>
+
+<h1></h1>
+
+<p><img src="http://www.mojeda.com/wp/wp-content/2013/04/serverupbigthemes.png" alt="Screenshot"><img src="http://www.mojeda.com/wp/wp-content/2013/04/serverupthemes.png" alt="Mobile Screenshot"></p>
+
+<h1>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h1>
+
+<h1></h1>
+
+<ol>
+<li>Create a database with a user.</li>
+<li>Import the servers.sql file in in the /sql/ folder, to populate the database.</li>
+<li>Configure /includes/config.php with the database and user information.</li>
+<li>Copy uptime.php to any server you want to monitor. This needs to be publicly accessible.</li>
+<li>Insert an entry into the database.
+
+<ul>
+<li>name - The name of your server.</li>
+<li>url - The URL path to the uptime.php file (minus uptime.php and http://) e.g. dns.domain.tld/path/</li>
+<li>location - Where is your server physically located?</li>
+<li>type - What type of server is this? DNS, SQL, Apache/nginx, etc.</li>
+</ul>
+</li>
+</ol><h1>
+<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h1>
+
+<h1></h1>
+
+<p><strong>Remote Servers</strong>:</p>
+
+<ul>
+<li>PHP5, currently php_exec needs to be enabled in order to get the uptime.</li>
+<li>Web Server (lighttpd, apache2, nginx, etc.)</li>
+<li>You do <strong>NOT</strong> need a database running on the remote servers.</li>
+</ul><p><strong>Master Server</strong>:</p>
+
+<ul>
+<li>PHP5 + PHP5_CURL</li>
+<li>Web Server (lighttpd, apache2, nginx, etc.)</li>
+<li>mySQL server unless you choose to use a remote mySQL server.</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/mojeda">mojeda</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
