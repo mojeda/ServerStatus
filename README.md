@@ -1,8 +1,8 @@
-# Community
-===========
+Community
+============
 Server Status now has a community forum open to everyone. https://www.pilabs.io/forum/
 
-# ServerStatus
+ServerStatus
 ============
 
 ServerStatus is based off [BlueVM's](http://uptime.bluevm.com/) Uptime Checker script, [original download and information](http://www.lowendtalk.com/discussion/comment/169690#Comment_169690).
@@ -11,12 +11,12 @@ It uses Bootstrap for theming and progress bars.
 
 You can currently see Load, RAM (free), HDD (free) statistics, and if it is online or not.
 
-# Screenshot
+Screenshot
 ============
 ![Screenshot](http://www.mojeda.com/wp/wp-content/2013/04/serverupbigthemes.png)
 ![Mobile Screenshot](http://www.mojeda.com/wp/wp-content/2013/04/serverupthemes.png)
 
-# Installation
+Installation
 ============
 
 1. Create a database with a user.
@@ -29,7 +29,7 @@ You can currently see Load, RAM (free), HDD (free) statistics, and if it is onli
   * location - Where is your server physically located?
   * type - What type of server is this? DNS, SQL, Apache/nginx, etc.
 
-# Requirements
+Requirements
 ============
 
 **Remote Servers**:
