@@ -1,3 +1,7 @@
+# Community
+===========
+Server Status now has a community forum open to everyone. https://www.pilabs.io/forum/
+
 # ServerStatus
 ============
 
