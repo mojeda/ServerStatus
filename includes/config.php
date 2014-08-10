@@ -1,14 +1,18 @@
 <?php
 
-$host = 'localhost';
-$user = '';
-$pass = '';
-$data = '';
-$sSetting['refresh'] = "10000";
+$servers = array();
+// Example array below!
+//$servers[] = array('url' => '', 'name' => '', 'location' => '', 'host' => '', 'type' => '');
+//============================================================================================
+// The order you put your arrays in will be how they show up on the server!
+$servers[] = array('url' => 'http://www.munroenet.com/uptime.php', 'name' => 'WebServer', 'location' => 'LALA Land', 'host' => 'NSA', 'type' => 'WWW');
+$servers[] = array('url' => 'https://cdn.content-network.net/.uptime.txt', 'name' => 'CDN', 'location' => 'Dallas,TX', 'host' => 'Catalysthost is the best host', 'type' => 'CDN');
 
-mysql_connect($host, $user, $pass) or die(mysql_error());
-mysql_select_db($data) or die(mysql_error());
-//Template options: "default" and "dark"
-$template = "./templates/default/";
-$index = $template . "index.php";
+
+
+
+$template = "./templates/default/"; // currently default and dark are the only options
+$index = $template . "index.php"; 
+$refresh = 2500; // this defines how quickly clients will recheck the uptime server for updates
+$cache = 5; // this is how long before the cache expires, set to 0 to turn off.
 ?>

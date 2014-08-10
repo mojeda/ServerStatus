@@ -1,22 +1,38 @@
 <?php
+// pull
 include('../includes/config.php');
+
 function get_data($url) {
-  $ch = curl_init();
-  $timeout = 5;
-  curl_setopt($ch, CURLOPT_URL, $url);
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-  curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
-  $data = curl_exec($ch);
-  curl_close($ch);
+	$opts = array(
+	  'http'=>array(
+		'method'=>"GET",
+		'timeout' => 4,
+		'header'=>"Accept-language: en\r\n" .
+				  "Cookie: foo=bar\r\n" . 
+				  "User-Agent: ServerStatus @  ". $_SERVER['SERVER_NAME']
+	  )
+	);
+	$context = stream_context_create($opts);
+	$data = file_get_contents($url, false, $context);
   return $data;
 }
-$sId = mysql_real_escape_string($_GET['url']);
-if(is_numeric($sId)){
-	$data = mysql_query("SELECT * FROM servers WHERE id='$sId'");
-	$result = mysql_fetch_array($data);
-	$url = "http://".$result['url']."/uptime.php";
-	$output = get_data($url);
-	if(($output == NULL) || ($output === false)){
+if(is_numeric($_GET['url'])){
+	$time = time();
+	$old_cache = json_decode(file_get_contents("../cache/" . $_GET['url']  . ".raw"), true);
+	$cachetime = $old_cache['time'] + $cache;
+	if($cachetime <= $time) {
+		$result = $servers[$_GET['url']];
+		if($result == null) { exit('WOW THERE, THIS ID DOES NOT EXIST');}
+		$data = json_decode(get_data($result['url']), true);
+		$data["time"] = $time;
+		file_put_contents("../cache/" . $_GET['url'] . ".raw", json_encode($data));
+		unset($data['time']);
+	} else {
+	unset($old_cache['time']);
+	$data = $old_cache;
+	}
+	
+	if(($data == NULL) || ($data === false)){
 		$array = array();
 		$array['uptime'] = '
 		<div class="progress">
@@ -34,9 +50,24 @@ if(is_numeric($sId)){
 		</div>
 		';
 		echo json_encode($array);
+		if (!file_exists("../cache/" . $_GET['url'] . ".down")) {
+			file_put_contents("../cache/" . $_GET['url'] . ".down", $time);
+		}
 	} else {
-		$data = json_decode($output, true);
 		$data["load"] = number_format($data["load"], 2);
 		echo json_encode($data);
+		if (file_exists("../cache/" . $_GET['url'] . ".down")) {
+			$lastfail = file_get_contents("../cache/" . $_GET['url'] . ".down");
+			unlink("../cache/" . $_GET['url'] . ".down");
+			$failures = array();
+			$failures[] = array('down' => $lastfail, 'upagain' => $time, 'name' => $servers[$_GET['url']]['name']);
+			$oldfails = json_decode(file_get_contents("../cache/outages.db"), true);
+			foreach($oldfails as $fail) {
+				$failures[] = $fail;
+			}
+			file_put_contents("../cache/outages.db", json_encode($failures));
+			
+		}
+		
 	}
 }

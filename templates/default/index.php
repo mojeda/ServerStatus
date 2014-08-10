@@ -23,27 +23,12 @@
 
 	<div class="container content">
 		<table class="table table-striped table-condensed">
-			<thead>
-			<tr>
-				<th id="status" style="text-align: center;">Status</th>
-				<th id="name">Name</th>
-				<th id="type">Type</th>
-				<th id="host">Host</th>
-				<th id="location">Location</th>
-				<th id="uptime">Uptime</th>
-				<th id="load">Load</th>
-				<th id="ram">RAM</th>
-				<th id="hdd">HDD</th>
-			</tr>
-			</thead>
-			<tbody>
 			<?php echo $sTable; ?>
-			</tbody>
 		</table>
 	</div>
 	
 	<div class="container">
-		<p style="text-align: center; font-size: 10px;"><a href="https://github.com/mojeda/ServerStatus">ServerStatus</a> by <a href="http://www.mojeda.com">Michael Ojeda</a></p>
+		<p style="text-align: center; font-size: 10px;"><a href="https://github.com/Munroenet/ServerStatus">ServerStatus</a> by <a href="http://www.mojeda.com">Michael Ojeda</a> and <a href="http://www.cameronmunroe.com/">Cameron Munroe</a></p>
 	</div>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
