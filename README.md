@@ -1,6 +1,6 @@
-Community
+Help
 ============
-Server Status now has a community forum open to everyone. https://www.pilabs.io/forum/
+https://www.qwdsa.com/converse/threads/serverstatus-rebuild.43
 
 ServerStatus
 ============
@@ -13,31 +13,22 @@ You can currently see Load, RAM (free), HDD (free) statistics, and if it is onli
 
 Screenshot
 ============
+![Screenshot](http://www.cameronmunroe.com/u/2014-08-16_10-04-40.png)
 ![Screenshot](http://www.mojeda.com/wp/wp-content/2013/04/serverupbigthemes.png)
 ![Mobile Screenshot](http://www.mojeda.com/wp/wp-content/2013/04/serverupthemes.png)
 
 Installation
 ============
 
-1. Create a database with a user.
-2. Import the servers.sql file in in the /sql/ folder, to populate the database.
-3. Configure /includes/config.php with the database and user information.
-4. Copy uptime.php to any server you want to monitor. This needs to be publicly accessible.
-5. Insert an entry into the database.
-  * name - The name of your server.
-  * url - The URL path to the uptime.php file (minus uptime.php and http://) e.g. dns.domain.tld/path/
-  * location - Where is your server physically located?
-  * type - What type of server is this? DNS, SQL, Apache/nginx, etc.
+https://www.qwdsa.com/converse/threads/serverstatus-rebuild.43
 
 Requirements
 ============
 
 **Remote Servers**:
-* PHP5, currently php_exec needs to be enabled in order to get the uptime.
-* Web Server (lighttpd, apache2, nginx, etc.)
+* PHP5 (With Server Support -S) 
 * You do **NOT** need a database running on the remote servers.
 
 **Master Server**:
-* PHP5 + PHP5_CURL
+* PHP5
 * Web Server (lighttpd, apache2, nginx, etc.)
-* mySQL server unless you choose to use a remote mySQL server.
