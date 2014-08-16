@@ -59,13 +59,16 @@ if(is_numeric($_GET['url'])){
 		if (file_exists("../cache/" . $_GET['url'] . ".down")) {
 			$lastfail = file_get_contents("../cache/" . $_GET['url'] . ".down");
 			unlink("../cache/" . $_GET['url'] . ".down");
-			$failures = array();
-			$failures[] = array('down' => $lastfail, 'upagain' => $time, 'name' => $servers[$_GET['url']]['name']);
-			$oldfails = json_decode(file_get_contents("../cache/outages.db"), true);
-			foreach($oldfails as $fail) {
-				$failures[] = $fail;
+			$totalfail = $time - $lastfail;
+			if($totalfail > $failafter) {
+				$failures = array();
+				$failures[] = array('down' => $lastfail, 'upagain' => $time, 'name' => $servers[$_GET['url']]['name'], 'host' => $servers[$_GET['url']]['host'], 'type' => $servers[$_GET['url']]['type']);
+				$oldfails = json_decode(file_get_contents("../cache/outages.db"), true);
+				foreach($oldfails as $fail) {
+					$failures[] = $fail;
+				}
+				file_put_contents("../cache/outages.db", json_encode($failures));
 			}
-			file_put_contents("../cache/outages.db", json_encode($failures));
 			
 		}
 		

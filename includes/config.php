@@ -15,4 +15,6 @@ $template = "./templates/default/"; // currently default and dark are the only o
 $index = $template . "index.php"; 
 $refresh = 2500; // this defines how quickly clients will recheck the uptime server for updates
 $cache = 5; // this is how long before the cache expires, set to 0 to turn off.
+$failafter = 60; // this defines what we see as an outage or not in seconds. 
+// (cont.) This protects against failed queries unless there is an actual outage for more then X. 
 ?>
