@@ -27,7 +27,6 @@ Requirements
 
 **Remote Servers**:
 * PHP5 (With Server Support -S) 
-* You do **NOT** need a database running on the remote servers.
 
 **Master Server**:
 * PHP5
