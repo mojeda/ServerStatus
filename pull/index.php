@@ -51,18 +51,18 @@ if(is_numeric($_GET['url'])){
 		';
 		echo json_encode($array);
 		if (!file_exists("../cache/" . $_GET['url'] . ".down")) {
-			file_put_contents("../cache/" . $_GET['url'] . ".down", $time);
+			file_put_contents("../cache/" . $_GET['url'] . ".down", json_encode(array('time'=>$time, 'uptime'=>$old_cache['uptime'])));
 		}
 	} else {
 		$data["load"] = number_format($data["load"], 2);
 		echo json_encode($data);
 		if (file_exists("../cache/" . $_GET['url'] . ".down")) {
-			$lastfail = file_get_contents("../cache/" . $_GET['url'] . ".down");
+			$lastfail = json_decode(file_get_contents("../cache/" . $_GET['url'] . ".down"), true);
 			unlink("../cache/" . $_GET['url'] . ".down");
-			$totalfail = $time - $lastfail;
+			$totalfail = $time - $lastfail['time'];
 			if($totalfail > $failafter) {
 				$failures = array();
-				$failures[] = array('down' => $lastfail, 'upagain' => $time, 'name' => $servers[$_GET['url']]['name'], 'host' => $servers[$_GET['url']]['host'], 'type' => $servers[$_GET['url']]['type']);
+				$failures[] = array('down' => $lastfail['time'], 'upagain' => $time, 'name' => $servers[$_GET['url']]['name'], 'host' => $servers[$_GET['url']]['host'], 'type' => $servers[$_GET['url']]['type'], 'uptime' => $lastfail['uptime']);
 				$oldfails = json_decode(file_get_contents("../cache/outages.db"), true);
 				foreach($oldfails as $fail) {
 					$failures[] = $fail;
