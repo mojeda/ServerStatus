@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>ServerStatus</title>
+		<title>Uptime | <?php echo $title?></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
 		<link href="<?php echo $template; ?>css/custom.css" rel="stylesheet">
@@ -16,7 +16,7 @@
 	<div class="navbar navbar-fixed-top">
 	  <div class="navbar-inner">
 	  	<div class="container">
-		    <a class="brand" href="#">ServerStatus</a>
+		    <a class="brand" href="index.php">ServerStatus Live</a><a class="brand" style="float:right;" href="outages.php">Outages</a>
 		</div>
 	  </div>
 	</div>

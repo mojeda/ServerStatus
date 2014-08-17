@@ -1,5 +1,6 @@
 <?php
 // main page
+$title = 'Live';
 include('./includes/config.php');
 global $sJavascript, $sTable;
 
@@ -12,8 +13,8 @@ $sTable ='
 			<tr>
 				<th id="status" style="text-align: center;">Status</th>
 				<th id="name">Name</th>
-				<th id="type">Type</th>
 				<th id="host">Host</th>
+				<th id="type">Type</th>
 				<th id="location">Location</th>
 				<th id="uptime">Uptime</th>
 				<th id="load">Load</th>
@@ -37,9 +38,9 @@ foreach($servers as $result) {
 					<div class="bar bar-danger" style="width: 100%;"><small>Down</small></div>
 				</div>
 			</td>
-			<td>'.$result["name"].'</td>
+			<td><a href="outages.php?name='.$result["name"].'">'.$result["name"].'</td>
+			<td><a href="outages.php?host='.$result["host"].'">'.$result["host"].'</td>
 			<td>'.$result["type"].'</td>
-			<td>'.$result["host"].'</td>
 			<td>'.$result["location"].'</td>
 			<td id="uptime'.$id.'">n/a</td>
 			<td id="load'.$id.'">n/a</td>
