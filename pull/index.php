@@ -6,7 +6,7 @@ function get_data($url) {
 	$opts = array(
 	  'http'=>array(
 		'method'=>"GET",
-		'timeout' => 4,
+		'timeout' => 10,
 		'header'=>"Accept-language: en\r\n" .
 				  "Cookie: foo=bar\r\n" . 
 				  "User-Agent: ServerStatus @  ". $_SERVER['SERVER_NAME']
@@ -25,7 +25,7 @@ if(is_numeric($_GET['url'])){
 		if($result == null) { exit('WOW THERE, THIS ID DOES NOT EXIST');}
 		$data = json_decode(get_data($result['url']), true);
 		$data["time"] = $time;
-		file_put_contents("../cache/" . $_GET['url'] . ".raw", json_encode($data));
+		if($data['uptime'] != null){file_put_contents("../cache/" . $_GET['url'] . ".raw", json_encode($data));}
 		unset($data['time']);
 	} else {
 	unset($old_cache['time']);
