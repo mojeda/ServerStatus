@@ -5,7 +5,7 @@
 //
 // By Cameron Munroe ~ Mun
 // Website: https://www.qwdsa.com/converse/threads/serverstatus-rebuild.43/ 
-// Version 0.1
+// Version 0.1a
 //
 //
 // should be cross compatiable with ServerStatus2 by @mojeda
@@ -70,12 +70,12 @@ preg_match_all('/Cached:(.*)kB/', $internal['memraw'], $internal['memcache']); /
 $internal['memfree'] = trim($internal['memcache'][1][0], " ") + $internal['memfree']; // Making cache seen as Free Memory!
 
 
-$internal['memperc'] = round(($internal['memfree'] / $internal['memtotal']) * 100); // calculations
+$internal['memperc'] = floor(($internal['memfree'] / $internal['memtotal']) * 100); // calculations
 $post['memory'] = levels($internal['memperc'], $dl, $wl);  // adding to the post field!
 // memory done!
 
 // HDD 
-$internal['hddperc'] = round(($internal['hddfree'] / $internal['hddtotal']) * 100); // calculations!
+$internal['hddperc'] = floor(($internal['hddfree'] / $internal['hddtotal']) * 100); // calculations!
 $post['hdd'] = levels($internal['hddperc'], $dl, $wl); // adding hdd to the post field!
 // HDD done! 
 
