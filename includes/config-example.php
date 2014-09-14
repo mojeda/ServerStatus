@@ -17,4 +17,6 @@ $refresh = 2500; // this defines how quickly clients will recheck the uptime ser
 $cache = 5; // this is how long before the cache expires, set to 0 to turn off.
 $failafter = 60; // this defines what we see as an outage or not in seconds. 
 // (cont.) This protects against failed queries unless there is an actual outage for more then X. 
+$rtype = 'free'; // this is at the bottom of the page  and will tell your users if you are showing 
+// free or used resources to make it more clear for them!
 ?>

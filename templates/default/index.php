@@ -28,7 +28,7 @@
 	</div>
 	
 	<div class="container">
-		<p style="text-align: center; font-size: 10px;"><a href="https://github.com/Munroenet/ServerStatus">ServerStatus</a> by <a href="http://www.mojeda.com">Michael Ojeda</a> and <a href="http://www.cameronmunroe.com/">Cameron Munroe</a></p>
+		<p style="text-align: center; font-size: 10px;">We are showing <?php echo $rtype; ?> resources.<br /><a href="https://www.qwdsa.com/converse/threads/serverstatus-rebuild.43/">ServerStatus</a> by <a href="http://www.mojeda.com">Michael Ojeda</a> and <a href="http://www.cameronmunroe.com/">Cameron Munroe</a></p>
 	</div>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
