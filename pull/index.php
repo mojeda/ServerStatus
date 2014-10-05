@@ -52,6 +52,16 @@ if(is_numeric($_GET['url'])){
 		echo json_encode($array);
 		if (!file_exists("../cache/" . $_GET['url'] . ".down")) {
 			file_put_contents("../cache/" . $_GET['url'] . ".down", json_encode(array('time'=>$time, 'uptime'=>$old_cache['uptime'])));
+		} else {
+			$down = json_decode(file_get_contents("../cache/" . $_GET['url'] . ".down"), true);
+			$dead = $down['time'] + $failafter;
+				if($dead <= $time && !isset($down['mailed']) && $mailme == 1) {
+					$message = "Host: " . $servers[$_GET['url']]['host']  . " is down as of: " .  date("H:i | d M Y", $down['time']) . ". It has currently been down for " . $failafter . " seconds.";
+					$message = wordwrap($message, 70, "\r\n");
+					mail($emailto, "ServerStatus: " . $servers[$_GET['url']]['host'] . " is down!", $message, 'From: ServerStatus <' . $emailfrom . '>' . "\r\n");
+					$down['mailed'] = 'yes';
+					file_put_contents("../cache/" . $_GET['url'] . ".down", json_encode($down));
+				}
 		}
 	} else {
 		$data["load"] = number_format($data["load"], 2);
@@ -64,6 +74,11 @@ if(is_numeric($_GET['url'])){
 				$failures = array();
 				$failures[] = array('down' => $lastfail['time'], 'upagain' => $time, 'name' => $servers[$_GET['url']]['name'], 'host' => $servers[$_GET['url']]['host'], 'type' => $servers[$_GET['url']]['type'], 'uptime' => $lastfail['uptime']);
 				$oldfails = json_decode(file_get_contents("../cache/outages.db"), true);
+				if($mailme == 1) {
+					$message = "Host: " . $servers[$_GET['url']]['host']  . " is up as of: " .  date("H:i | d M Y", $time) . ". It was down for: " . number_format((($time - $lastfail['time']) / 60), 0, '.', '') . " Minutes.";
+					$message = wordwrap($message, 70, "\r\n");
+					mail($emailto, "ServerStatus: " . $servers[$_GET['url']]['host'] . " is up!", $message, 'From: ServerStatus <' . $emailfrom . '>' . "\r\n");
+					}
 				foreach($oldfails as $fail) {
 					$failures[] = $fail;
 				}
