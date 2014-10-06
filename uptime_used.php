@@ -1,11 +1,11 @@
 <?php
 // ========================================================================================================================================
-//                                                                  Uptime (free resources)
+//                                                                  Uptime (used resources)
 // ========================================================================================================================================
 //
 // By Cameron Munroe ~ Mun
 // Website: https://www.qwdsa.com/converse/threads/serverstatus-rebuild.43/ 
-// Version 0.1a
+// Version 0.1
 //
 //
 // should be cross compatiable with ServerStatus2 by @mojeda
@@ -18,8 +18,8 @@
 //                                                                  Settings!
 // ========================================================================================================================================
 
-$dl = 10; // At this percent of usage we will show it as RED!
-$wl = 25; // At this percent of usage we will show it as Yellow!
+$dl = 90; // At this percent of usage we will show it as RED!
+$wl = 75; // At this percent of usage we will show it as Yellow!
 
 $memloc = '/proc/meminfo'; // This is where we get our info for meminfo.
 // Debian / Ubuntu it is /proc/meminfo and should be the default for Linux!
@@ -70,12 +70,12 @@ preg_match_all('/Cached:(.*)kB/', $internal['memraw'], $internal['memcache']); /
 $internal['memfree'] = trim($internal['memcache'][1][0], " ") + $internal['memfree']; // Making cache seen as Free Memory!
 
 
-$internal['memperc'] = floor(($internal['memfree'] / $internal['memtotal']) * 100); // calculations
+$internal['memperc'] = round((($internal['memtotal'] - $internal['memfree']) / $internal['memtotal']) * 100); // calculations
 $post['memory'] = levels($internal['memperc'], $dl, $wl);  // adding to the post field!
 // memory done!
 
 // HDD 
-$internal['hddperc'] = floor(($internal['hddfree'] / $internal['hddtotal']) * 100); // calculations!
+$internal['hddperc'] = round((($internal['hddtotal'] - $internal['hddfree']) / $internal['hddtotal']) * 100); // calculations!
 $post['hdd'] = levels($internal['hddperc'], $dl, $wl); // adding hdd to the post field!
 // HDD done! 
 
@@ -104,13 +104,13 @@ function levels($perc, $dl, $wl){
     } else {
         $width = $perc;
     }
-    if($perc > $wl) { 
+    if($perc < $wl) { 
         $return = '<div class="progress progress-striped active"><div class="bar bar-success" style="width: ' . $width . '%;">' . $perc . '%</div</div>';
     }
-    elseif($perc < $wl) {
+    elseif($perc > $wl) {
         $return = '<div class="progress progress-striped active"><div class="bar bar-warning" style="width: ' . $width . '%;">' . $perc . '%</div></div>';
     }
-    elseif($perc < $dl) {
+    elseif($perc > $dl) {
         $return = '<div class="progress progress-striped active"><div class="bar bar-danger" style="width: ' . $width . '%;">' . $perc . '%</div></div>';
     }
     return $return;
