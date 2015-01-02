@@ -1,4 +1,4 @@
 <?php
 include('./includes/config.php');
 
-include($template.'index.php');
+include($template.'server.php');

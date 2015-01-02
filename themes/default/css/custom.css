@@ -1,0 +1,62 @@
+html, body { background: #fff; color: #222; }
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus { background: none; border-bottom: 1px #e63e00 solid; margin-bottom: -1px; }
+.navbar-default .navbar-nav>li>a:hover { border-bottom: 1px #e63e00 solid; margin-bottom: -1px; }
+
+.container.panel { border: 1px #e7e7e7 solid; padding: 20px; background: #ffffff; border-radius: 5px; border-width: 1px 1px 2px 1px; }
+.server { width: 372px; background: #ffffff; padding: 10px 10px 0 10px; border-radius: 3px; border: 1px #e7e7e7 solid; border-width: 1px 1px 2px 1px; display: inline-block; margin: 0 5px 8px 0; }
+.server:hover { border-color: #e63e00; }
+.box { width: 372px; background: #ffffff; padding: 10px 10px 0 10px; border-radius: 3px; border: 1px #e7e7e7 solid; border-width: 1px 1px 2px 1px; display: inline-block; margin: 0 5px 8px 0; }
+.box table tr td { border-top: none; border-bottom: 1px #ebebeb solid; }
+.hostname { font-weight: bold; }
+.server .row { margin: 10px 0 10px 0; }
+.uptime, .load { font-weight: bold; text-align: center; font-size: 26px; }
+.subtext { text-align: center; }
+.statsUptime, .statsLoad { background: #f5f5f5; padding: 10px 0 10px 0; }
+.statsUptime { border-radius: 5px 0 0 5px; }
+.statsLoad { border-radius: 0 5px 5px 0; }
+.minigraph .progress { margin-top: 10px; margin-bottom: 0; }
+
+a.details { color: #000; opacity: 0.1; }
+a.details:hover { opacity: 1; }
+#historygraph { background: #ffffff; padding: 0 10px 10px 10px; border-radius: 3px; border: 1px #e7e7e7 solid; border-width: 1px 1px 2px 1px; display: inline-block; margin-bottom: 8px; }
+
+#details table { width: 372px; }
+#subscribe { width: 372px; }
+
+.notice {
+		border-radius: 3px;
+		padding: 10px 10px 5px 10px;
+		font-weight: bold;
+		margin-top: 5px;
+		margin-bottom: 10px;
+		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	}
+		.notice ul {
+			list-style: none;
+			margin: -5px 0 0 -40px;
+		}
+			.notice li {
+				display: inline;
+				margin: 0 5px 0 0;
+				vertical-align: bottom;
+			}
+				.notice li img {
+					vertical-align: bottom;
+				}
+		.notice.success {
+			background: #5BB75B;
+			background-image: -webkit-linear-gradient(top, #62C462, #51A351);
+			border: 1px #51A351 solid;
+			color: #fff;
+		}
+		.notice.fail {
+			background: #DA4F49;
+			background-image: -webkit-linear-gradient(top, #EE5F5B, #BD362F);
+			border: 1px #BD362F solid;
+			color: #fff;
+		}
+
+h1 { margin: 0 0 10px 0; font-size: 22px; }
+
+.table-history th,.table-history td { text-align: center; color: #000; } 

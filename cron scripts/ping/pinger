@@ -1,0 +1,11 @@
+#!/bin/bash
+now=$(date +"%m%d%Y")
+timestamp=$(date +"%r")
+path="/home/serverup/public_html/uptime"
+for i in `cat server.list`
+do
+	if [ ! -d "$path/$i" ]; then
+		mkdir $path/$i
+	fi
+	ping -c1 -w3000 $i | tail -1 | awk '{print $4}' | echo "{\"server\":\"$i\",\"ping\":\"`cut -d '/' -f 2`\",\"timestamp\":\"$timestamp\"}," >> $path/$i/$now.json
+done
