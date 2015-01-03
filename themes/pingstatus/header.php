@@ -1,4 +1,4 @@
-
+<?php if(isset($_GET['id'])) { $name = htmlspecialchars($_GET['id']); } ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>

@@ -1,7 +1,8 @@
 <?php
 include('../includes/config.php');
 
-$name = $_GET['url'];
+$name = htmlspecialchars($_GET['url']);
+$name = str_replace(chr(0), '', $name);
 
 $id = findid($name, $servers);
 

@@ -14,8 +14,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav">
-            <li <?php if(isset($_GET['id'])===false) { echo 'class="active"'; } ?>><a href="/">Overview</a></li>
-            <?php if(isset($_GET['id'])) { echo '<li class="active"><a href="/server.php?id='.$_GET['id'].'">'.$_GET['id'].'</a></li>';}?>
+            <li <?php if(isset($name)===false) { echo 'class="active"'; } ?>><a href="/">Overview</a></li>
+            <?php if(isset($name)) { echo '<li class="active"><a href="/server.php?id='.$name.'">'.$name.'</a></li>';}?>
           </ul>
         </div>
       </div>

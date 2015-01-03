@@ -1,21 +1,22 @@
 <?php
 require_once('header.php');
 
-if(isset($_GET['date'])===false) { $date = date('mdY'); } else { $date = $_GET['date']; }
+if(isset($_GET['date'])) { $dateclean = htmlspecialchars($_GET['date']); }
+if(isset($dateclean)===false) { $date = date('mdY'); } else { $date = $dateclean; }
 $readabledate = substr($date, 0, 2)."/".substr($date, 2, 2)."/".substr($date, 4, 4);
 
-$name = $_GET['id'];
-
+$name = htmlspecialchars($_GET['id']);
+$name = str_replace(chr(0), '', $name);
 $id = findid($name, $servers);
-
+if(is_numeric($id)==true) {
 $url = "./uptime/".$servers[$id]['hostname']."/".$date.".json";
-
 $output = file_get_contents($url);
 $output = '{"servers":['.$output.'{"server":"end"}]}';
 $output = utf8_encode($output);
 $json = json_decode($output,true);
 
 $result = array_reverse($json['servers']);
+} else { exit('<div class="container"><div class="alert alert-danger">No server by the name "'.$name.'" found.</div></div>'); }
 
 ?>
 
@@ -24,7 +25,6 @@ $result = array_reverse($json['servers']);
             <div class="col-md-4">
 
               <?php
-
                 echo '
                 <div class="server single">
                     <div class="pull-right"><a href="server.php?id='.$servers[$id]['name'].'" class="details"><i class="glyphicon glyphicon-new-window"></i></a></div>
