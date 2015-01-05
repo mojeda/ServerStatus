@@ -13,11 +13,12 @@ $servers = array
 		"location"	=> 'Oompa Loompa Land',
 		"host"		=> 'Willy Wonka',
 		"type"		=> 'Web Server',
+		"hostname" 	=> 'svr.domain.tld',
 	),
 
 	OR
 
-	array( "name" => 'hostname', "url" => 'http://server.tld/path/to/uptime.php', "location" => 'Oompa Loompa Land', "host" => 'Willy Wonka',"type" => 'Web Server',),
+	array( "name" => 'hostname', "url" => 'http://server.tld/path/to/uptime.php', "location" => 'Oompa Loompa Land', "host" => 'Willy Wonka',"type" => 'Web Server',"hostname" => 'svr.domain.tld',),
 
 	*/
 
