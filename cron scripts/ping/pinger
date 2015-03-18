@@ -1,11 +1,13 @@
 #!/bin/bash
+list=$1
+if [ -z "$list" ]; then list="server.list"; fi
 now=$(date +"%m%d%Y")
-timestamp=$(date +"%r")
+timestamp=$(date +"%H:%M %p")
 path="<full_path>/public_html/uptime"
-for i in `cat server.list`
+for i in `cat $list`
 do
 	if [ ! -d "$path/$i" ]; then
 		mkdir $path/$i
 	fi
-	ping -c1 -w3000 $i | tail -1 | awk '{print $4}' | echo "{\"server\":\"$i\",\"ping\":\"`cut -d '/' -f 2`\",\"timestamp\":\"$timestamp\"}," >> $path/$i/$now.json
+	ping -c1 -W 3 $i | tail -1 | awk '{print $4}' | echo "{\"server\":\"$i\",\"ping\":\"`cut -d '/' -f 2`\",\"timestamp\":\"$timestamp\"}," >> $path/$i/$now.json
 done
