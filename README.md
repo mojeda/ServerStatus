@@ -27,6 +27,7 @@ Installation
   * name - The name of your server.
   * url - The URL path to the uptime.php file (minus uptime.php and http://) e.g. dns.domain.tld/path/
   * location - Where is your server physically located?
+  * host - The name of the host of which your server is hosted by.
   * type - What type of server is this? DNS, SQL, Apache/nginx, etc.
 
 Requirements
