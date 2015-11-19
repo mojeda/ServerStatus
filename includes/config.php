@@ -1,9 +1,6 @@
 <?php
 
-$host = 'localhost';
-$user = '';
-$pass = '';
-$data = '';
+
 $sSetting['refresh'] = "10000";
 
 //Template options: "default" and "dark"
@@ -13,11 +10,19 @@ $index = $template . "index.php";
 
 class DB extends PDO
 {
-    public function __construct($db)
+    public function __construct()
     {
-        $dsn = sprintf('mysql:dbname=%s;host%s', $db['data'], $db['host']);
+        /********************************
+         ***** CONFIGURATION OPTIONS ****
+         ********************************/
+        $host = 'localhost';
+        $user = 'xxxxxx';
+        $pass = 'xxxxxx';
+        $data = 'xxxxxx';
+
+        $dsn = sprintf('mysql:dbname=%s;host%s', $data, $host);
         try {
-            return new PDO($dsn, $db['user'], $db['pass'], PDO::FETCH_OBJ);
+            parent::__construct($dsn, $user, $pass);
         } catch (PDOException $e) {
             die("Database error: " . $e->getMessage());
         }
@@ -25,4 +30,4 @@ class DB extends PDO
     }
 }
 
-$db = new DB(['host' => $host, 'user' => $user, 'pass' => $pass, 'data' => $data]);
+$db = new DB();
