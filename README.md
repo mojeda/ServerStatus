@@ -39,6 +39,6 @@ Requirements
 * You do **NOT** need a database running on the remote servers.
 
 **Master Server**:
-* PHP5 + PHP5_CURL
+* PHP5 + PHP5_CURL + PHP_PDO
 * Web Server (lighttpd, apache2, nginx, etc.)
 * mySQL server unless you choose to use a remote mySQL server.

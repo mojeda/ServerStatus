@@ -43,8 +43,10 @@
 	</div>
 	
 	<div class="container">
-		<p style="text-align: center; font-size: 10px;"><a href="https://github.com/mojeda/ServerStatus">ServerStatus</a> by <a href="http://www.mojeda.com">Michael Ojeda</a></p>
-	</div>
+		<p style="text-align: center; font-size: 10px;">
+			<a href="https://github.com/mojeda/ServerStatus">ServerStatus</a> by <a href="http://www.mojeda.com">Michael Ojeda</a><br />
+			Adapted by <a href="http://luke.sx">Luke Brown</a>
+		</p>	</div>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 	<?php echo $sJavascript; ?>

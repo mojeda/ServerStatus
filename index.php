@@ -2,11 +2,14 @@
 include('./includes/config.php');
 global $sJavascript, $sTable;
 
-$query = mysql_query("SELECT * FROM servers ORDER BY id") or die(mysql_error());
+$query = $sql->prepare("SELECT * FROM servers ORDER BY id");
+$query->execute();
+$results = $query->fetchAll();
+
 	$sJavascript .= '<script type="text/javascript">
 		function uptime() {
 			$(function() {';
-while($result = mysql_fetch_array($query)){
+foreach($results as $result){
 	$sJavascript .= '$.getJSON("pull/index.php?url='.$result["id"].'",function(result){
 	$("#online'.$result["id"].'").html(result.online);
 	$("#uptime'.$result["id"].'").html(result.uptime);
