@@ -5,7 +5,7 @@ Server Status now has a community forum open to everyone. https://www.pilabs.io/
 ServerStatus
 ============
 
-ServerStatus is based off [BlueVM's](http://uptime.bluevm.com/) Uptime Checker script, [original download and information](http://www.lowendtalk.com/discussion/comment/169690#Comment_169690).
+ServerStatus is based on [BlueVM's](http://uptime.bluevm.com/) Uptime Checker script, [original download and information](http://www.lowendtalk.com/discussion/comment/169690#Comment_169690).
 
 It uses Bootstrap for theming and progress bars.
 
