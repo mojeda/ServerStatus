@@ -3,7 +3,7 @@
 	<head>
 		<title>ServerStatus</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+		<link href="<?php echo $template; ?>css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap 3.3.7 -->
 		<link href="<?php echo $template; ?>css/custom.css" rel="stylesheet">
 		<style>
 			body { padding-top: 60px; }
@@ -13,13 +13,32 @@
 		</style>
 	</head>
 <body>
-	<div class="navbar navbar-fixed-top navbar-inverse">
-	  <div class="navbar-inner">
-	  	<div class="container">
-		    <a class="brand" href="#">ServerStatus</a>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <a class="navbar-brand" href="#">ServerStatus</a>
 		</div>
-	  </div>
-	</div>
+		
+		<!-- Put other links here 
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+		  		<li><a class="" href="#">Link 1</a></li>
+		  		<li><a class="" href="#">Link 2</a></li>
+		  		<li><a class="" href="#">Link 3</a></li>
+		  		<li><a class="" href="#">Link 4</a></li>
+		  </ul>
+		</div>-->
+	  </div><!-- /.container-fluid -->
+	</nav>
+	<br/>
+	<br/>
 
 	<div class="container content">
 		<table class="table table-striped table-condensed">
@@ -45,8 +64,8 @@
 	<div class="container">
 		<p style="text-align: center; font-size: 10px;"><a href="https://github.com/mojeda/ServerStatus">ServerStatus</a> by <a href="http://www.mojeda.com">Michael Ojeda</a></p>
 	</div>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+	<script src="<?php echo $template; ?>js/jquery.min.js"></script> <!-- jQuery 3.1.1 -->
+	<script src="<?php echo $template; ?>js/bootstrap.min.js"></script> <!-- Bootstrap 3.3.7 -->
 	<?php echo $sJavascript; ?>
 </body>
 </html>
